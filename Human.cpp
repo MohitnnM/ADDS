@@ -1,6 +1,7 @@
 #include <iostream>
-using namespace std;
 #include "Human.h"
+using namespace std;
+
 
 Human::Human(string playerName): name(playerName){}
 
