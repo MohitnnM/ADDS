@@ -7,8 +7,8 @@ using namespace std;
 
 class Computer: public Player{
     public:
-       char makeMove();
-       string getName();
+       char makeMove() override;
+       string getName() override;
 };
 
 

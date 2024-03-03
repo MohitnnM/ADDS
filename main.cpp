@@ -22,8 +22,5 @@ int main() {
     else
         cout << winner->getName() << " Wins\n";
 
-    delete humanPlayer;
-    delete computer;
-
     return 0;
 }
