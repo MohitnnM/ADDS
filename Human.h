@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-class Human{
+class Human:public Player{
     private:
         string name;
     public:
