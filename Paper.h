@@ -2,6 +2,8 @@
 #define PAPER_H
 
 #include "Move.h"
+#include <iostream>
+#include <string>
 
 class Paper : public Move {
     public:

@@ -2,6 +2,7 @@
 #define MOVE_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Move{

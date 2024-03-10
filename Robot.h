@@ -2,6 +2,8 @@
 #define ROBOT_H
 
 #include "Move.h"
+#include <iostream>
+#include <string>
 
 class Robot : public Move {
     public:

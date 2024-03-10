@@ -2,6 +2,8 @@
 #define MONKEY_H
 
 #include "Move.h"
+#include <iostream>
+#include <string>
 
 class Monkey : public Move {
     public:

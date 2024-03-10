@@ -2,6 +2,8 @@
 #define ROCK_H
 
 #include "Move.h"
+#include <iostream>
+#include <string> 
 
 class Rock : public Move {
     public:
