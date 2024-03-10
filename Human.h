@@ -10,8 +10,8 @@ class Human:public Player{
         string name;
     public:
         Human(string playerName = "Human");
-        virtual Move* makeMove();
-        string getName();
+        Move* makeMove() override;
+        string getName() override;
 };
 
 

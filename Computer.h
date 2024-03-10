@@ -8,7 +8,7 @@ using namespace std;
 
 class Computer: public Player{
     public:
-       virtual Move* makeMove();
+       Move* makeMove();
        string getName();
 };
 
