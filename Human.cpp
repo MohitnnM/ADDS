@@ -33,7 +33,6 @@ Move* Human::makeMove() {
     } else if (move == "Zombie") {
         return new Zombie();
     } else {
-        // Invalid move
         return nullptr;
     }
 }

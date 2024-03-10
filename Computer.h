@@ -1,18 +1,14 @@
-
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
-#include <iostream>
-using namespace std;
 #include "Player.h"
+#include "Rock.h" // Include the header file for the Rock move
 
-class Computer: public Player{
-    public:
-       Move* makeMove();
-       string getName();
+class Computer : public Player {
+public:
+    Computer();
+    Move* makeMove() override;
+    std::string getName() override;
 };
 
-
-
-
-#endif
+#endif // COMPUTER_H

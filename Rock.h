@@ -4,9 +4,9 @@
 #include "Move.h"
 
 class Rock : public Move {
-public:
-    string getName() override;
-    bool beats(Move* otherMove) override;
+    public:
+        Rock();
+        string getName() override;
 };
 
 #endif

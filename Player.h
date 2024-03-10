@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Move.h"
+#include <string>
 using namespace std;
 
 class Player{

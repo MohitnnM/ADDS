@@ -1,12 +1,12 @@
-
-#include "iostream"
 #include "Computer.h"
-using namespace std;
+#include "Rock.h"
 
-Move* Computer::makeMove(){
-    return nullptr;
+Computer::Computer() {}
+
+Move* Computer::makeMove() {
+    return new Rock(); // Always return a Rock move
 }
 
-string Computer::getName(){
+std::string Computer::getName() {
     return "Computer";
 }
