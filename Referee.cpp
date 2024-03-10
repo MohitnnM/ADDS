@@ -23,11 +23,9 @@ Player * Referee::refGame(Player * player1, Player * player2){
                (move1->getName() == "Ninja" && (move2->getName() == "Pirate" || move2->getName() == "Zombie")) ||
                (move1->getName() == "Zombie" && (move2->getName() == "Monkey" || move2->getName() == "Scissors"))) {
         // Player 1 wins
-        delete move2;
         return player1;
     } else {
         // Player 2 wins
-        delete move1;
         return player2;
     }
 }
