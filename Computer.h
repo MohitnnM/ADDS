@@ -2,7 +2,9 @@
 #define COMPUTER_H
 
 #include "Player.h"
-#include "Rock.h" // Include the header file for the Rock move
+#include <string>
+#include <iostream>
+#include "Rock.h" 
 
 class Computer : public Player {
 public:
@@ -11,4 +13,4 @@ public:
     std::string getName() override;
 };
 
-#endif // COMPUTER_H
+#endif 
