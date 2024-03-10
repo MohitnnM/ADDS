@@ -13,13 +13,17 @@ class Referee {
         announceWinner();
     }
     private:
-    //OCP violation
         std::string humanMove;
         int humanScore = 0;
         int computerScore = 0;
         int playRound() {
+            //OCP violation
+            //Reason: should be done in another function becuase if another player is
+            //added the the code will need to be modified
             std::cout << "Enter move: ";
             std::cin >> humanMove;
+            //OCP violation
+            //Reason: same as above
             if (humanMove == "paper") {
                 humanScore++;
             } else if (humanMove == "scissors") {
