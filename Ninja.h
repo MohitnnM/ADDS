@@ -8,7 +8,7 @@
 class Ninja : public Move {
     public:
         Ninja();
-        string getName() override;
+        string getName();
 };
 
 #endif

@@ -7,7 +7,6 @@ using namespace std;
 
 class Move{
     public:
-        virtual ~Move() {}
         virtual string getName() = 0;
 };
 

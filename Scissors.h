@@ -8,7 +8,7 @@
 class Scissors: public Move {
     public:
         Scissors();
-        string getName() override;
+        string getName();
 };
 
 #endif

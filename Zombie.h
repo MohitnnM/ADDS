@@ -8,7 +8,7 @@
 class Zombie : public Move {
     public:
         Zombie();
-        string getName() override;
+        string getName();
 };
 
 #endif 

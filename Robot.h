@@ -8,7 +8,7 @@
 class Robot : public Move {
     public:
         Robot();
-        string getName() override;
+        string getName();
 };
 
 #endif

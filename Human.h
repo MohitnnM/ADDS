@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Human:public Player{
@@ -10,8 +11,8 @@ class Human:public Player{
         string name;
     public:
         Human(string playerName = "Human");
-        Move* makeMove() override;
-        string getName() override;
+        Move* makeMove();
+        string getName();
 };
 
 

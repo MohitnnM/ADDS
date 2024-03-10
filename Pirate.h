@@ -8,7 +8,7 @@
 class Pirate : public Move {
     public:
         Pirate();
-        string getName() override;
+        string getName();
 };
 
 #endif
