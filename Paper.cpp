@@ -3,6 +3,6 @@
 
 Paper::Paper(){}
 
-string Paper::getName() {
+string Paper::getName() const{
     return "Paper";
 }

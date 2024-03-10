@@ -2,6 +2,6 @@
 
 Scissors::Scissors(){}
 
-string Scissors::getName() {
+string Scissors::getName() const{
     return "Scissors";
 }

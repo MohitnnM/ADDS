@@ -2,6 +2,6 @@
 
 Pirate::Pirate(){}
 
-string Pirate::getName() {
+string Pirate::getName() const{
     return "Pirate";
 }

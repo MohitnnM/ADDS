@@ -7,7 +7,8 @@ using namespace std;
 
 class Move{
     public:
-        virtual string getName() = 0;
+        virtual ~Move()=default;
+        virtual string getName() const = 0;
 };
 
 

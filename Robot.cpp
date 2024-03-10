@@ -2,6 +2,6 @@
 
 Robot::Robot(){}
 
-string Robot::getName() {
+string Robot::getName() const{
     return "Robot";
 }

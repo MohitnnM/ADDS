@@ -2,6 +2,6 @@
 
 Monkey::Monkey(){}
 
-string Monkey::getName() {
-    return "Monkey";
+string Monkey::getName() const{
+            return "Monkey";
 }

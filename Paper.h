@@ -8,7 +8,7 @@
 class Paper : public Move {
     public:
         Paper();
-        string getName();
+        string getName() const override;
 };
 
 #endif

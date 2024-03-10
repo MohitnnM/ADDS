@@ -11,11 +11,7 @@ class Human:public Player{
         string name;
     public:
         Human(string playerName = "Human");
-        Move* makeMove();
-        string getName();
+        Move* makeMove() override;
+        string getName() const override;
 };
-
-
-
-
 #endif

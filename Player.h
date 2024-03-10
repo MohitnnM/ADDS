@@ -9,9 +9,9 @@ using namespace std;
 
 class Player{
     public:
-        Player(){}
+        virtual ~Player() = default;
         virtual Move* makeMove() = 0;
-        virtual string getName() = 0;
+        virtual string getName() const = 0;
 };
 
 

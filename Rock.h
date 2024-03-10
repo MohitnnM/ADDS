@@ -8,7 +8,7 @@
 class Rock : public Move {
     public:
         Rock();
-        string getName();
+        string getName() const override;
 };
 
 #endif

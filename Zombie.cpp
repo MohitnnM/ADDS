@@ -2,6 +2,6 @@
 
 Zombie::Zombie(){}
 
-string Zombie::getName() {
+string Zombie::getName() const{
     return "Zombie";
 }

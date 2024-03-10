@@ -37,6 +37,6 @@ Move* Human::makeMove() {
     }
 }
 
-string Human::getName() {
+string Human::getName() const{
     return name;
 }

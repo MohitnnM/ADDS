@@ -2,6 +2,6 @@
 
 Rock::Rock(){}
 
-string Rock::getName() {
+string Rock::getName() const{
     return "Rock";
 }

@@ -2,6 +2,6 @@
 
 Ninja::Ninja(){}
 
-string Ninja::getName() {
+string Ninja::getName() const{
     return "Ninja";
 }

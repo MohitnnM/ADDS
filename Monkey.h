@@ -8,7 +8,7 @@
 class Monkey : public Move {
     public:
         Monkey();
-        string getName();
+        string getName() const override;
 };
 
 #endif 
