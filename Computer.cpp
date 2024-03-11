@@ -1,8 +1,6 @@
 #include "Computer.h"
 
-Computer::Computer() {}
-
-Move* Computer::makeMove() {
+Move* Computer::makeMove() const {
     return new Rock();
 }
 

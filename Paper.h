@@ -3,12 +3,12 @@
 
 #include "Move.h"
 #include <iostream>
-#include <string>
+using namespace std;
 
 class Paper : public Move {
     public:
-        Paper();
         string getName() const override;
+        vector<string> getAttacks() const override;
 };
 
-#endif
+#endif 

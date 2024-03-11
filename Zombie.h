@@ -3,12 +3,13 @@
 
 #include "Move.h"
 #include <iostream>
-#include <string>
+using namespace std;
+
 
 class Zombie : public Move {
     public:
-        Zombie();
         string getName() const override;
+        vector<string> getAttacks() const override;
 };
 
-#endif 
+#endif

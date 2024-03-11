@@ -1,7 +1,9 @@
 #include "Rock.h"
 
-Rock::Rock(){}
-
-string Rock::getName() const{
+string Rock::getName() const {
     return "Rock";
+}
+
+vector<string> Rock::getAttacks() const {
+    return {"Scissors", "Zombie"};
 }

@@ -1,7 +1,9 @@
 #include "Pirate.h"
 
-Pirate::Pirate(){}
-
-string Pirate::getName() const{
+string Pirate::getName() const {
     return "Pirate";
+}
+
+vector<string> Pirate::getAttacks() const {
+    return {"Rock", "Robot"};
 }

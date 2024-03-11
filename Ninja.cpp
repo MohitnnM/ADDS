@@ -1,7 +1,9 @@
 #include "Ninja.h"
 
-Ninja::Ninja(){}
-
-string Ninja::getName() const{
+string Ninja::getName() const {
     return "Ninja";
+}
+
+vector<string> Ninja::getAttacks() const {
+    return {"Pirate", "Zombie"};
 }

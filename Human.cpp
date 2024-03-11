@@ -10,9 +10,9 @@
 #include <iostream>
 using namespace std;
 
-Human::Human(string playerName) : name(playerName) {}
+Human::Human(const string& playerName) : name(playerName) {}
 
-Move* Human::makeMove() {
+Move* Human::makeMove() const {
     string move;
     cout << "Enter move: ";
     cin >> move;
@@ -32,7 +32,7 @@ Move* Human::makeMove() {
         return new Ninja();
     } else if (move == "Zombie") {
         return new Zombie();
-    } else {
+    }else{
         return nullptr;
     }
 }

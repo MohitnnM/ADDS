@@ -1,7 +1,9 @@
 #include "Zombie.h"
 
-Zombie::Zombie(){}
-
-string Zombie::getName() const{
+string Zombie::getName() const {
     return "Zombie";
+}
+
+vector<string> Zombie::getAttacks() const {
+    return {"Paper", "Monkey"};
 }

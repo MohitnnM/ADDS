@@ -2,13 +2,13 @@
 #define SCISSORS_H
 
 #include "Move.h"
+using namespace std;
 #include <iostream>
-#include <string>
 
-class Scissors: public Move {
+class Scissors : public Move {
     public:
-        Scissors();
         string getName() const override;
+        vector<string> getAttacks() const override;
 };
 
 #endif

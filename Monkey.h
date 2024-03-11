@@ -2,13 +2,13 @@
 #define MONKEY_H
 
 #include "Move.h"
+using namespace std;
 #include <iostream>
-#include <string>
 
 class Monkey : public Move {
     public:
-        Monkey();
-        string getName() const override;
+        std::string getName() const override;
+        std::vector<std::string> getAttacks() const override;
 };
 
-#endif 
+#endif

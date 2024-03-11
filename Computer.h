@@ -7,10 +7,9 @@
 #include "Rock.h" 
 
 class Computer : public Player {
-public:
-    Computer();
-    Move* makeMove() override;
-    std::string getName() const override;
+    public:
+        Move* makeMove() const override;
+        std::string getName() const override;
 };
 
 #endif 

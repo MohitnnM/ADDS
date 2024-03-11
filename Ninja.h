@@ -2,13 +2,13 @@
 #define NINJA_H
 
 #include "Move.h"
-#include <string>
 #include <iostream>
+using namespace std;
 
 class Ninja : public Move {
     public:
-        Ninja();
         string getName() const override;
+        vector<string> getAttacks() const override;
 };
 
 #endif

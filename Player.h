@@ -1,20 +1,14 @@
-
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <iostream>
-#include "Move.h"
 #include <string>
-using namespace std;
+#include "Move.h"
 
-class Player{
-    public:
-        virtual ~Player() = default;
-        virtual Move* makeMove() = 0;
-        virtual string getName() const = 0;
+class Player {
+public:
+    virtual ~Player() {}
+    virtual Move* makeMove() const = 0;
+    virtual std::string getName() const = 0;
 };
-
-
-
 
 #endif

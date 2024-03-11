@@ -1,8 +1,9 @@
 #include "Paper.h"
 
-
-Paper::Paper(){}
-
-string Paper::getName() const{
+string Paper::getName() const {
     return "Paper";
+}
+
+vector<std::string> Paper::getAttacks() const {
+    return {"Rock", "Monkey"};
 }

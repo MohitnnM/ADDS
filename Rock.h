@@ -3,12 +3,12 @@
 
 #include "Move.h"
 #include <iostream>
-#include <string> 
+using namespace std;
 
 class Rock : public Move {
-    public:
-        Rock();
-        string getName() const override;
+public:
+    string getName() const override;
+    vector<string> getAttacks() const override;
 };
 
 #endif

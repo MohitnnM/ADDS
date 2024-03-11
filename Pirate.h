@@ -3,12 +3,12 @@
 
 #include "Move.h"
 #include <iostream>
-#include <string>
+using namespace std;
 
 class Pirate : public Move {
     public:
-        Pirate();
         string getName() const override;
+        vector<string> getAttacks() const override;
 };
 
 #endif
