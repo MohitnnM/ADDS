@@ -11,7 +11,7 @@ std::vector<int> Finder::findSubstrings(std::string s1, std::string s2) {
         
         if (found != std::string::npos) {
             index = found + 1;
-            result.push_back(found);
+            result.push_back(found+1);
         } else {
             result.push_back(-1);
             break;
