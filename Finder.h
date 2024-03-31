@@ -1,13 +1,12 @@
 #ifndef FINDER_H
 #define FINDER_H
-
-#include <vector>
+#include <iostream>
 #include <string>
-
-class Finder
-{
-public:
-    std::vector<int> findSubstrings(std::string s1, std::string s2);
+#include <vector>
+#include <chrono>
+class Finder {
+    public:
+        std::vector<int> findSubstrings(std::string s1, std::string s2);
 };
 
-#endif 
+#endif
