@@ -1,62 +1,78 @@
-
 #include "BigNumCalc.h"
 #include <list>
-
-BigNumCalc::BigNumCalc() {}
-
-BigNumCalc::~BigNumCalc() {}
+#include <string>
 
 std::list<int> BigNumCalc::buildBigNum(std::string numString) {
-    std::list<int> bigNum;
+    std::list<int> result;
     for (char c : numString) {
-        bigNum.push_back(c - '0');
+        result.push_back(c - '0'); // Convert char to int
     }
-    return bigNum;
+    return result;
 }
 
 std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
     std::list<int> result;
     int carry = 0;
+
     auto it1 = num1.rbegin();
     auto it2 = num2.rbegin();
-    while (it1 != num1.rend() || it2 != num2.rend() || carry) {
+
+    while (it1 != num1.rend() || it2 != num2.rend() || carry != 0) {
+        int sum = carry;
         if (it1 != num1.rend()) {
-            carry += *it1;
+            sum += *it1;
             ++it1;
         }
         if (it2 != num2.rend()) {
-            carry += *it2;
+            sum += *it2;
             ++it2;
         }
-        result.push_front(carry % 10);
-        carry /= 10;
+        carry = sum / 10;
+        result.push_front(sum % 10);
     }
+
     return result;
 }
 
 std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
     std::list<int> result;
     int borrow = 0;
+
     auto it1 = num1.rbegin();
     auto it2 = num2.rbegin();
-    while (it1 != num1.rend()) {
-        int diff = *it1 - borrow;
+
+    while (it1 != num1.rend() || it2 != num2.rend()) {
+        int diff = borrow;
+        if (it1 != num1.rend()) {
+            diff += *it1;
+            ++it1;
+        }
         if (it2 != num2.rend()) {
             diff -= *it2;
             ++it2;
         }
         if (diff < 0) {
             diff += 10;
-            borrow = 1;
+            borrow = -1;
         } else {
             borrow = 0;
         }
         result.push_front(diff);
-        ++it1;
     }
+
+    // Remove leading zeros
+    while (result.size() > 1 && result.front() == 0) {
+        result.pop_front();
+    }
+
     return result;
 }
 
 std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
-    int n = num2.back();
-   
+    int digit = num1.front();
+    std::list<int> result = num2;
+    for (int i = 1; i < digit; i++) {
+        result = add(result, num2);
+    }
+    return result;
+}
