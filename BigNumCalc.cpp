@@ -5,7 +5,7 @@
 std::list<int> BigNumCalc::buildBigNum(std::string numString) {
     std::list<int> result;
     for (char c : numString) {
-        result.push_back(c - '0'); // Convert char to int
+        result.push_back(c - '0');
     }
     return result;
 }
@@ -60,7 +60,7 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
         result.push_front(diff);
     }
 
-    // Remove leading zeros
+
     while (result.size() > 1 && result.front() == 0) {
         result.pop_front();
     }
@@ -69,10 +69,33 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {
 }
 
 std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
-    int digit = num1.front();
-    std::list<int> result = num2;
-    for (int i = 1; i < digit; i++) {
-        result = add(result, num2);
+    std::list<int> product;
+    int carryOver = 0;
+
+    for (auto it1 = num1.rbegin(); it1 != num1.rend(); ++it1) {
+        std::list<int> partialProduct;
+        int digit1 = *it1;
+        carryOver = 0;
+
+
+        for (int i = 0; i < num1.size() - 1 - std::distance(num1.rbegin(), it1); ++i) {
+            partialProduct.push_back(0);
+        }
+
+        for (auto it2 = num2.rbegin(); it2 != num2.rend(); ++it2) {
+            int digit2 = *it2;
+            int productDigit = (digit1 * digit2) + carryOver;
+            carryOver = productDigit / 10;
+            partialProduct.push_front(productDigit % 10);
+        }
+
+
+        if (carryOver > 0) {
+            partialProduct.push_front(carryOver);
+        }
+
+        product = add(product, partialProduct);
     }
-    return result;
+
+    return product;
 }
