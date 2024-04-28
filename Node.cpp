@@ -13,6 +13,6 @@ Node* Node::getLink() {
     return link;
 }
 
-void Node::setLink(Node* next) {
-    link = next;
+void Node::setLink(Node* nextNode) {
+    link = nextNode;
 }
