@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <cmath> // for std::find
-#include <algorithm>
 
 template <typename T>
 class Heap {
@@ -47,8 +46,7 @@ Heap<T>::Heap(std::vector<T> start_values) {
   // starting from last non-leaf node (last parent), heapify each
   // of the parents
   int initial_parent_index = floor(values.size() / 2) - 1;
-  for (int parent_index = initial_parent_index; parent_index >= 0;
-       parent_index--) {
+  for (int parent_index = initial_parent_index; parent_index >= 0; parent_index--) {
     heapify(parent_index);
   }
 }
@@ -83,7 +81,9 @@ void Heap<T>::siftUp(int index) {
 template <typename T>
 void Heap<T>::remove(T value) {
   auto it = std::find(values.begin(), values.end(), value);
-  if (it == values.end()) return;  // value not found
+  if (it == values.end()){ 
+    return;
+  } 
 
   int index = std::distance(values.begin(), it);
   values[index] = values.back();
