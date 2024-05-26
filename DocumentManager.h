@@ -10,17 +10,17 @@ private:
     struct Document {
         std::string name;
         int id;
-        int license_limit;
+        int lic_limit;
         int copies_borrowed;
     };
 
-    std::unordered_map<std::string, Document> documentsByName;
+    std::unordered_map<std::string, Document> docByName;
     std::unordered_map<int, Document> documentsById;
     std::unordered_set<int> patrons;
     std::unordered_map<int, std::unordered_set<int>> borrowed;
 
 public:
-    void addDocument(std::string name, int id, int license_limit);
+    void addDocument(std::string name, int id, int lic_limit);
     void addPatron(int patronID);
     int search(std::string name);
     bool borrowDocument(int docid, int patronID);

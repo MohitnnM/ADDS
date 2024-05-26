@@ -1,14 +1,14 @@
 #include "DocumentManager.h"
 #include <iostream>
 
-void DocumentManager::addDocument(std::string name, int id, int license_limit) {
-    if (documentsById.find(id) != documentsById.end() || documentsByName.find(name) != documentsByName.end()) {
+void DocumentManager::addDocument(std::string name, int id, int lic_limit) {
+    if (documentsById.find(id) != documentsById.end() || docByName.find(name) != docByName.end()) {
         std::cerr << "Document with id " << id << " or name " << name << " already exists." << std::endl;
         return;
     }
-    Document doc = {name, id, license_limit, 0};
+    Document doc = {name, id, lic_limit, 0};
     documentsById[id] = doc;
-    documentsByName[name] = doc;
+    docByName[name] = doc;
 }
 
 void DocumentManager::addPatron(int patronID) {
@@ -16,8 +16,8 @@ void DocumentManager::addPatron(int patronID) {
 }
 
 int DocumentManager::search(std::string name) {
-    if (documentsByName.find(name) != documentsByName.end()) {
-        return documentsByName[name].id;
+    if (docByName.find(name) != docByName.end()) {
+        return docByName[name].id;
     }
     return 0;
 }
@@ -28,7 +28,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
     }
 
     Document& doc = documentsById[docid];
-    if (borrowed[docid].size() >= doc.license_limit) {
+    if (borrowed[docid].size() >= doc.lic_limit) {
         return false;
     }
 
