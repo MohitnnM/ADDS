@@ -1,7 +1,14 @@
 #include "DocumentManager.h"
+#include <iostream>
 
 void DocumentManager::addDocument(std::string name, int id, int license_limit) {
-    documents[id] = {name, license_limit};
+    if (documentsById.find(id) != documentsById.end() || documentsByName.find(name) != documentsByName.end()) {
+        std::cerr << "Document with id " << id << " or name " << name << " already exists." << std::endl;
+        return;
+    }
+    Document doc = {name, id, license_limit, 0};
+    documentsById[id] = doc;
+    documentsByName[name] = doc;
 }
 
 void DocumentManager::addPatron(int patronID) {
@@ -9,27 +16,34 @@ void DocumentManager::addPatron(int patronID) {
 }
 
 int DocumentManager::search(std::string name) {
-    for (const auto& [id, doc] : documents) {
-        if (doc.name == name) {
-            return id;
-        }
+    if (documentsByName.find(name) != documentsByName.end()) {
+        return documentsByName[name].id;
     }
     return 0;
 }
 
 bool DocumentManager::borrowDocument(int docid, int patronID) {
-    if (documents.find(docid) == documents.end() || patrons.find(patronID) == patrons.end()) {
+    if (documentsById.find(docid) == documentsById.end() || patrons.find(patronID) == patrons.end()) {
         return false;
     }
 
-    if (borrowed[docid].size() < documents[docid].license_limit) {
-        borrowed[docid].insert(patronID);
-        return true;
+    Document& doc = documentsById[docid];
+    if (borrowed[docid].size() >= doc.license_limit) {
+        return false;
     }
 
-    return false; 
+    borrowed[docid].insert(patronID);
+    doc.copies_borrowed++;
+    return true;
 }
 
 void DocumentManager::returnDocument(int docid, int patronID) {
-    borrowed[docid].erase(patronID);
+    if (documentsById.find(docid) == documentsById.end() || patrons.find(patronID) == patrons.end()) {
+        return;
+    }
+
+    if (borrowed.find(docid) != borrowed.end() && borrowed[docid].find(patronID) != borrowed[docid].end()) {
+        borrowed[docid].erase(patronID);
+        documentsById[docid].copies_borrowed--;
+    }
 }

@@ -9,10 +9,13 @@ class DocumentManager {
 private:
     struct Document {
         std::string name;
+        int id;
         int license_limit;
+        int copies_borrowed;
     };
 
-    std::unordered_map<int, Document> documents;
+    std::unordered_map<std::string, Document> documentsByName;
+    std::unordered_map<int, Document> documentsById;
     std::unordered_set<int> patrons;
     std::unordered_map<int, std::unordered_set<int>> borrowed;
 
@@ -24,4 +27,4 @@ public:
     void returnDocument(int docid, int patronID);
 };
 
-#endif 
+#endif
